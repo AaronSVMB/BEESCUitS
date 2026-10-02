@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Behavioral and Experimental Economics Stanford-Caltech-UC Student Conference</title>
+
+    <style>
+
+        /* =========================================================
+           BASE
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            color: #2b2b2b;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+
+        .nav {
+            width: 100%;
+            background: #F6E7A7;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 22px 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-title {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #514c35;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero {
+            background: #F6E7A7;
+            padding: 95px 36px 110px;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 22px;
+
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+
+            color: #71673f;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: clamp(48px, 8vw, 82px);
+            line-height: 1.02;
+
+            font-weight: 700;
+            letter-spacing: -0.045em;
+
+            color: #242424;
+        }
+
+        .hero-subtitle {
+            max-width: 690px;
+            margin: 28px auto 0;
+
+            font-size: 20px;
+            line-height: 1.6;
+
+            color: #514c35;
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+           ========================================================= */
+
+        section {
+            scroll-margin-top: 30px;
+        }
+
+        .section {
+            padding: 95px 36px;
+        }
+
+        .section-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            margin-bottom: 14px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+
+            color: #9b842d;
+        }
+
+        h2 {
+            margin: 0 0 32px;
+
+            font-size: clamp(30px, 4vw, 39px);
+            line-height: 1.25;
+
+            font-weight: 650;
+            letter-spacing: -0.025em;
+
+            color: #252525;
+        }
+
+        p {
+            margin: 0 0 23px;
+            font-size: 18px;
+            color: #444444;
+        }
+
+
+        /* =========================================================
+           ABOUT
+           ========================================================= */
+
+        .about {
+            background: #ffffff;
+        }
+
+
+        /* =========================================================
+           CURRENT CONFERENCE
+           ========================================================= */
+
+        .current {
+            background: #faf9f5;
+        }
+
+        .conference-card {
+            margin-top: 38px;
+
+            border-top: 1px solid #ddd8c9;
+            border-bottom: 1px solid #ddd8c9;
+
+            padding: 30px 0;
+        }
+
+        .conference-year {
+            font-size: 25px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+
+            margin-bottom: 10px;
+        }
+
+        .conference-detail {
+            margin: 6px 0;
+
+            font-size: 17px;
+            color: #555555;
+        }
+
+        .conference-detail strong {
+            color: #292929;
+        }
+
+
+        /* =========================================================
+           PAST CONFERENCES
+           ========================================================= */
+
+        .past {
+            background: #ffffff;
+        }
+
+        .past-list {
+            margin-top: 42px;
+        }
+
+        .past-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 24px;
+
+            align-items: center;
+
+            padding: 25px 0;
+
+            border-top: 1px solid #e5e2d9;
+        }
+
+        .past-item:last-child {
+            border-bottom: 1px solid #e5e2d9;
+        }
+
+        .past-year {
+            font-size: 19px;
+            font-weight: 650;
+        }
+
+        .past-info {
+            font-size: 16px;
+            line-height: 1.55;
+            color: #555555;
+        }
+
+        .past-info strong {
+            color: #292929;
+            font-weight: 600;
+        }
+
+        .schedule-link {
+            display: inline-block;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #826d21;
+
+            border-bottom: 1px solid #c5af55;
+
+            padding-bottom: 2px;
+
+            white-space: nowrap;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .schedule-link:hover {
+            opacity: 0.6;
+        }
+
+
+        /* =========================================================
+           FOOTER / CONTACT
+           ========================================================= */
+
+        .footer {
+            background: #F6E7A7;
+            padding: 70px 36px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            margin-bottom: 12px;
+
+            font-size: 24px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+
+            color: #292929;
+        }
+
+        .footer p {
+            margin: 0;
+
+            font-size: 16px;
+            color: #514c35;
+        }
+
+        .footer a {
+            color: #5f501c;
+            text-decoration: none;
+            border-bottom: 1px solid #9c8738;
+        }
+
+        .footer a:hover {
+            opacity: 0.65;
+        }
+
+        .footer-note {
+            margin-top: 45px !important;
+
+            font-size: 12px !important;
+            color: #80764f !important;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                padding: 18px 22px;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 70px 24px 80px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 70px 24px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .past-item {
+                grid-template-columns: 75px 1fr;
+                gap: 10px 20px;
+            }
+
+            .schedule-link {
+                grid-column: 2;
+                justify-self: start;
+            }
+
+            .footer {
+                padding: 55px 24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
+    <nav class="nav">
+        <div class="nav-inner">
+
+            <div class="nav-title">
+                BEESCUitS
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#conference-2026">2026 Conference</a>
+                <a href="#past">Past Conferences</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <header class="hero">
+
+        <div class="hero-inner">
+
+            <p class="eyebrow">
+                California · Behavioral &amp; Experimental Economics
+            </p>
+
+            <h1>
+                Behavioral and Experimental Economics Stanford-Caltech-UC Student Conference
+            </h1>
+
+            <p class="hero-subtitle">
+                A student-led conference connecting PhD students in
+                behavioral and experimental economics across California.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         ABOUT
+         ========================================================= -->
+
+    <section class="section about" id="about">
+
+        <div class="section-inner">
+
+            <div class="section-label">
+                About
+            </div>
+
+            <h2>
+                Building a community for graduate students across California.
+            </h2>
+
+            <p>
+                The Behavioral and Experimental Economics Stanford-Caltech-UC Student Conference
+                (BEESCUitS) brings together PhD students working in
+                behavioral and experimental economics at institutions across
+                California. BEESCUitS is designed to help students get to
+                know one another, build a local peer network, learn about
+                ongoing research across institutions, meet potential
+                collaborators and co-authors, and receive feedback on their work.
+            </p>
+
+            <p>
+                At its core, BEESCUitS is a student-focused conference.
+                Presentations and discussions are currently attended only by
+                graduate students, creating a low-stakes environment in which
+                participants can present work in progress, exchange ideas
+                openly, and get useful feedback from peers at similar stages
+                of their careers.
+            </p>
+
+            <p>
+                By bringing students from nearby institutions together, we
+                hope to make it easier to stay connected, attend one another’s
+                events, share research ideas, and develop collaborations that
+                extend beyond the conference itself.
+            </p>
+
+            <p>
+                2026 marks the fourth iteration of BEESCUitS, and we
+                hope it will continue to grow as a lasting community for
+                behavioral and experimental economics PhD students in
+                California.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         2026 CONFERENCE
+         ========================================================= -->
+
+    <section class="section current" id="conference-2026">
+
+        <div class="section-inner">
+
+            <div class="section-label">
+                2026 Conference
+            </div>
+
+            <h2>
+                The fourth annual BEESCUitS.
+            </h2>
+
+            <p>
+                The 2026 conference will bring together graduate students
+                from across California for two days of student research,
+                discussion, and conversation.
+            </p>
+
+
+            <div class="conference-card">
+
+                <div class="conference-year">
+                    2026
+                </div>
+
+                <div class="conference-detail">
+                    <strong>Host:</strong> Caltech
+                </div>
+
+                <div class="conference-detail">
+                    <strong>Organizer:</strong> Aaron Berman
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAST CONFERENCES
+         ========================================================= -->
+
+    <section class="section past" id="past">
+
+        <div class="section-inner">
+
+            <div class="section-label">
+                Past Conferences
+            </div>
+
+            <h2>
+                Previous meetings.
+            </h2>
+
+            <p>
+                BEESCUitS began in 2023 and we've meet annually since.
+            </p>
+
+
+            <div class="past-list">
+
+
+                <!-- =========================
+                     2025
+                     ========================= -->
+
+                <div class="past-item">
+
+                    <div class="past-year">
+                        2025
+                    </div>
+
+                    <div class="past-info">
+                        <strong>Host University:</strong> UC, Santa Barbara<br>
+                        <strong>Organizer:</strong> Anastasiia Morozova
+                    </div>
+
+                    <a
+                        class="schedule-link"
+                        href="schedules/2025-schedule.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View schedule
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     2024
+                     ========================= -->
+
+                <div class="past-item">
+
+                    <div class="past-year">
+                        2024
+                    </div>
+
+                    <div class="past-info">
+                        <strong>Host University:</strong> Caltech<br>
+                        <strong>Organizer:</strong> Camila Farres
+                    </div>
+
+                    <a
+                        class="schedule-link"
+                        href="schedules/2024-schedule.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View schedule
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     2023
+                     ========================= -->
+
+                <div class="past-item">
+
+                    <div class="past-year">
+                        2023
+                    </div>
+
+                    <div class="past-info">
+                        <strong>Host University:</strong> Caltech<br>
+                        <strong>Organizer:</strong> Polina Detkova
+                    </div>
+
+                    <a
+                        class="schedule-link"
+                        href="schedules/2023-schedule.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View schedule
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CONTACT
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-title">
+                Interested in participating?
+            </div>
+
+            <p>
+                If this sounds interesting to you, please reach out to
+                this year’s organizer, Aaron Berman, at
+                <a href="mailto:aberman@caltech.edu">aberman@caltech.edu</a>
+                for more information.
+            </p>
+
+            <p class="footer-note">
+                BEESCUitS
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -253,6 +253,21 @@
         }
 
 
+        .conference-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+        }
+        
+        @media (max-width: 700px) {
+            .conference-info {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+
         /* =========================================================
            PAST CONFERENCES
            ========================================================= */
@@ -564,32 +579,34 @@
 
             <div class="conference-card">
 
-                <div class="conference-year">
-                    2026
-                </div>
-
-                <div class="conference-detail">
-                    <strong>Host University:</strong> Caltech
-                </div>
-
-                <div class="conference-detail">
-                    <strong>Organizer:</strong> Aaron Berman
-                </div>
-
-                <div class="conference-brochure">
-
-                    <a
-                        class="schedule-link"
-                        href="schedules/brochure-2026.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View conference brochure
-                    </a>
-
-                </div>
-
+            <div class="conference-year">
+                2026
             </div>
+        
+            <div class="conference-info">
+        
+                <div>
+                    <div class="conference-detail">
+                        <strong>Host University:</strong> Caltech
+                    </div>
+        
+                    <div class="conference-detail">
+                        <strong>Organizer:</strong> Aaron Berman
+                    </div>
+                </div>
+        
+                <a
+                    class="schedule-link"
+                    href="schedules/brochure-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View conference brochure
+                </a>
+        
+            </div>
+        
+        </div>
 
 
             <!-- 2026 GROUP PHOTO -->
